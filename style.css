@@ -33,3 +33,49 @@ button {
 .letter-slot.hidden {
     color: transparent;
 }
+
+#hangman {
+    height: 180px;
+}
+#face {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+#torso {
+    width: 0px;
+    height: 80px;
+    border-left: 2px solid black;
+    margin-left: 25px;
+}
+#leg-left, #leg-right, #arm-left, #arm-right {
+    position: absolute;
+    width: 0px;
+    height: 50px;
+    border-left: 2px solid black;
+    display: inline-block;
+}
+#leg-left {
+    margin-left: 11px;
+    transform: rotate(34deg);
+    margin-top: -5px;
+}
+#leg-right {
+    margin-left: 39px;
+    transform: rotate(-34deg);
+    margin-top: -5px;
+}
+#arm-right, #arm-left {
+    height: 40px;
+}
+#arm-right {
+    top: 64px;
+    left: 47px;
+    transform: rotate(45deg);
+}
+#arm-left {
+    top: 64px;
+    left: 19px;
+    transform: rotate(-45deg);
+}

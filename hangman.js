@@ -41,7 +41,7 @@ function renderPhrase() {
     for (let letter of secretPhrase) {
         let isGuessed = doesContainLetter(guessedLetters, letter);
 
-        if (!isGuessed) {
+        if (!isGuessed && letter !== ' ') {
             isSolved = false;
         }
 
@@ -79,19 +79,20 @@ function renderPhrase() {
             incorrectCount++
             let part = parts[incorrectCount - 1];
             $('#hangman').append(`
-                <div id="${part}">${part}</div>
+                <div id="${part}"></div>
             `); 
         }   
     }
 
 
     if (incorrectCount >= parts.length) {
-        alert('yer ded 💀');
+        // delay, so it doesn't block DOM updates
+        setTimeout(() => alert('yer ded 💀'), 0);
         return;
     }
 
     if (isSolved) {
-        alert('You won!');
+        setTimeout(() => alert('You won!'), 0);
     }
 }
 
